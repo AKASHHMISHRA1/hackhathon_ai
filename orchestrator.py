@@ -68,7 +68,7 @@ class Orchestrator:
         
         Args:
             query: Search query
-            agent_type: Type of agent (financial, risk, strategy, timeline)
+            agent_type: Type of agent (financial, risk, strategy, timeline, fact_checker)
             document_names: Optional list of document names to filter by
             k: Number of chunks to retrieve
             
@@ -104,10 +104,11 @@ class Orchestrator:
         """
         Main orchestration flow:
         1. Cache Check - check if similar question exists in cache
-        2. Triage - determine relevant documents
-        3. Specialized agents analyze relevant documents (with chunking)
+        2. Triage - determine relevant documents AND which agents to call
+        3. Specialized agents analyze relevant chunks (only if needed)
         4. Synthesis - combine insights to answer question
-        5. Cache - store the answer for future use
+        5. Fact Checker - verify the facts
+        6. Cache - store the answer for future use
         
         Returns:
             Dict with format:
@@ -142,29 +143,15 @@ class Orchestrator:
                 "latency_seconds": round(latency, 2)
             }
         
-        # Step 1: Triage - Get relevant document names from vector store
-        if self.vector_store:
-            # Use vector store to find relevant documents
-            triage_chunks = self.vector_store.search(question, k=10)
-            relevant_docs = list(set([
-                chunk["metadata"].get("document_name")
-                for chunk in triage_chunks
-                if chunk["metadata"].get("document_name")
-            ]))
-            
-            # If no documents found, try to get all available documents
-            if not relevant_docs:
-                stats = self.vector_store.get_stats()
-                relevant_docs = stats.get("documents", [])[:3]  # Limit to 3
-        else:
-            # Fallback to old triage method if vector store not available
-            if documents:
-                triage = triage_agent.DocumentTriageAgent("Triage")
-                relevant_docs, triage_input, triage_output = triage.run(question, documents)
-                triage_cost = triage.calculate_cost(triage_input, triage_output)
-                self.cost.add("TriageAgent", triage_input, triage_output, triage_cost)
-            else:
-                relevant_docs = []
+        # Step 1: Triage - Determine relevant documents AND which agents to call
+        triage = triage_agent.DocumentTriageAgent("Triage")
+        relevant_docs, agents_needed, triage_input, triage_output = triage.run(
+            question=question,
+            documents=documents,
+            vector_store=self.vector_store
+        )
+        triage_cost = triage.calculate_cost(triage_input, triage_output)
+        self.cost.add("TriageAgent", triage_input, triage_output, triage_cost)
         
         if not relevant_docs:
             latency = time.time() - start_time
@@ -176,72 +163,103 @@ class Orchestrator:
                 "latency_seconds": round(latency, 2)
             }
         
-        # Step 2: Analyze with specialized agents using RAG
+        # Step 2: Call only the agents determined by triage
         analysis_data = {}
         
-        # Financial Agent - using RAG retrieval
-        financial = financial_agent.FinancialAgent("Financial")
-        fin_text = self._retrieve_relevant_chunks(
-            query=question,
-            agent_type="financial",
-            document_names=relevant_docs,
-            k=5
-        )
-        if fin_text:
-            fin_data, fin_input, fin_output = financial.run(fin_text)
-            fin_cost = financial.calculate_cost(fin_input, fin_output)
-            self.cost.add("FinancialAgent", fin_input, fin_output, fin_cost)
-            analysis_data['financials'] = fin_data
-        else:
-            analysis_data['financials'] = {}
+        # Financial Agent - only if needed
+        if "financial" in agents_needed:
+            financial = financial_agent.FinancialAgent("Financial")
+            fin_text = self._retrieve_relevant_chunks(
+                query=question,
+                agent_type="financial",
+                document_names=relevant_docs,
+                k=5
+            )
+            if fin_text:
+                fin_data, fin_input, fin_output = financial.run(fin_text)
+                fin_cost = financial.calculate_cost(fin_input, fin_output)
+                self.cost.add("FinancialAgent", fin_input, fin_output, fin_cost)
+                analysis_data['financials'] = fin_data
+            else:
+                analysis_data['financials'] = {}
         
-        # Risk Agent - using RAG retrieval
-        risk = risk_agent.RiskAgent("Risk")
-        risk_text = self._retrieve_relevant_chunks(
-            query=question,
-            agent_type="risk",
-            document_names=relevant_docs,
-            k=5
-        )
-        if risk_text:
-            risks, risk_input, risk_output = risk.run(risk_text)
-            risk_cost = risk.calculate_cost(risk_input, risk_output)
-            self.cost.add("RiskAgent", risk_input, risk_output, risk_cost)
-            analysis_data['risks'] = risks
-        else:
-            analysis_data['risks'] = {}
+        # Risk Agent - only if needed
+        if "risk" in agents_needed:
+            risk = risk_agent.RiskAgent("Risk")
+            risk_text = self._retrieve_relevant_chunks(
+                query=question,
+                agent_type="risk",
+                document_names=relevant_docs,
+                k=5
+            )
+            if risk_text:
+                risks, risk_input, risk_output = risk.run(risk_text)
+                risk_cost = risk.calculate_cost(risk_input, risk_output)
+                self.cost.add("RiskAgent", risk_input, risk_output, risk_cost)
+                analysis_data['risks'] = risks
+            else:
+                analysis_data['risks'] = {}
         
-        # Strategy Agent - using RAG retrieval
-        strategy = strategy_agent.StrategyAgent("Strategy")
-        strategy_text = self._retrieve_relevant_chunks(
-            query=question,
-            agent_type="strategy",
-            document_names=relevant_docs,
-            k=5
-        )
-        if strategy_text:
-            strategy_data, strat_input, strat_output = strategy.run(strategy_text)
-            strat_cost = strategy.calculate_cost(strat_input, strat_output)
-            self.cost.add("StrategyAgent", strat_input, strat_output, strat_cost)
-            analysis_data['strategy'] = strategy_data
-        else:
-            analysis_data['strategy'] = {}
+        # Strategy Agent - only if needed
+        if "strategy" in agents_needed:
+            strategy = strategy_agent.StrategyAgent("Strategy")
+            strategy_text = self._retrieve_relevant_chunks(
+                query=question,
+                agent_type="strategy",
+                document_names=relevant_docs,
+                k=5
+            )
+            if strategy_text:
+                strategy_data, strat_input, strat_output = strategy.run(strategy_text)
+                strat_cost = strategy.calculate_cost(strat_input, strat_output)
+                self.cost.add("StrategyAgent", strat_input, strat_output, strat_cost)
+                analysis_data['strategy'] = strategy_data
+            else:
+                analysis_data['strategy'] = {}
         
-        # Timeline Agent - using RAG retrieval
-        timeline = timeline_agent.TimelineAgent("Timeline")
-        timeline_text = self._retrieve_relevant_chunks(
-            query=question,
-            agent_type="timeline",
-            document_names=relevant_docs,
-            k=5
-        )
-        if timeline_text:
-            timeline_data, time_input, time_output = timeline.run(timeline_text)
-            time_cost = timeline.calculate_cost(time_input, time_output)
-            self.cost.add("TimelineAgent", time_input, time_output, time_cost)
-            analysis_data['timeline'] = timeline_data
-        else:
-            analysis_data['timeline'] = {}
+        # Timeline Agent - only if needed
+        if "timeline" in agents_needed:
+            timeline = timeline_agent.TimelineAgent("Timeline")
+            timeline_text = self._retrieve_relevant_chunks(
+                query=question,
+                agent_type="timeline",
+                document_names=relevant_docs,
+                k=5
+            )
+            if timeline_text:
+                timeline_data, time_input, time_output = timeline.run(timeline_text)
+                time_cost = timeline.calculate_cost(time_input, time_output)
+                self.cost.add("TimelineAgent", time_input, time_output, time_cost)
+                analysis_data['timeline'] = timeline_data
+            else:
+                analysis_data['timeline'] = {}
+        
+        # Fact Checker Agent - only if needed
+        if "fact_checker" in agents_needed:
+            fact_checker = fact_checker_agent.FactCheckerAgent("FactChecker")
+            # For fact checker, we need to extract facts from the question or previous analysis
+            # For now, we'll use the question itself and relevant chunks
+            fact_checker_text = self._retrieve_relevant_chunks(
+                query=question,
+                agent_type="financial",  # Use financial as default for fact checking
+                document_names=relevant_docs,
+                k=5
+            )
+            if fact_checker_text:
+                # Extract potential facts from the question
+                facts_to_check = [question]  # Can be enhanced to extract specific facts
+                validation_data, fact_checker_tokens = fact_checker.run(
+                    facts=facts_to_check,
+                    documents={doc: fact_checker_text for doc in relevant_docs} if relevant_docs else None
+                )
+                # Estimate input/output tokens (fact_checker returns total tokens)
+                fact_checker_input = fact_checker_tokens // 2  # Rough estimate
+                fact_checker_output = fact_checker_tokens // 2
+                fact_checker_cost = fact_checker.calculate_cost(fact_checker_input, fact_checker_output)
+                self.cost.add("FactCheckerAgent", fact_checker_input, fact_checker_output, fact_checker_cost)
+                analysis_data['fact_checker'] = validation_data
+            else:
+                analysis_data['fact_checker'] = {}
         
         # Step 3: Synthesis
         synthesis = synthesis_agent.SynthesisAgent("Synthesis")
@@ -265,6 +283,7 @@ class Orchestrator:
             answer=answer,
             metadata={
                 "sources": relevant_docs,
+                "agents_used": agents_needed,
                 "analysis": analysis_data,
                 "cost": cost_report
             }

@@ -1,404 +1,14 @@
 [
   {
     "question": "What was the revenue for each quarter in 2024?",
-    "answer": "The available analysis data does not provide specific revenue figures for each quarter in 2024. However, it indicates that the total revenue for the fiscal year 2024 is projected to be approximately 85,777 million. Revenue trends show a decrease in iPhone and iPad sales, while services revenue has increased. For detailed quarterly revenue figures, further financial disclosures would be necessary.",
+    "answer": "The revenue for each quarter in 2024 is not explicitly provided in the available analysis data. However, it is noted that the total revenue for three months is calculated as 39,296 + 7,009 + 7,162 + 8,097 + 24,213, which totals 85,777. The revenue trend is indicated as decreasing, but specific quarterly breakdowns are not available. For precise quarterly figures, further detailed financial reports would be required.",
     "metadata": {
       "sources": [
         "_10-Q-Q3-2024-As-Filed.pdf"
       ],
-      "analysis": {
-        "financials": {
-          "metrics": {
-            "revenue": "85,777 million",
-            "net_income": "N/A",
-            "eps": "N/A",
-            "assets": "N/A",
-            "liabilities": "N/A",
-            "equity": "N/A"
-          },
-          "trends": {
-            "revenue_trend": "decreasing",
-            "profitability_trend": "N/A",
-            "key_changes": [
-              "iPhone revenue decreased from $39,669 million to $39,296 million for the three-month period.",
-              "iPad revenue decreased from $21,857 million to $19,744 million for the nine-month period.",
-              "Services revenue increased from $62,886 million to $71,197 million for the nine-month period."
-            ]
-          },
-          "ratios": {
-            "debt_to_equity": "N/A",
-            "current_ratio": "N/A",
-            "other_ratios": []
-          },
-          "summary": "The company experienced a decrease in overall revenue for the three-month period compared to the previous year, primarily driven by declines in iPhone and iPad sales, while services revenue showed growth."
-        },
-        "risks": {
-          "risk_factors": [
-            {
-              "category": "Financial",
-              "description": "The company's business, reputation, results of operations, financial condition, and stock price can be materially and adversely affected by various risks.",
-              "severity": "High",
-              "mitigation_mentioned": "No"
-            },
-            {
-              "category": "Regulatory",
-              "description": "The incorporation of risk factors from previous filings indicates potential regulatory scrutiny and compliance issues.",
-              "severity": "Medium",
-              "mitigation_mentioned": "No"
-            },
-            {
-              "category": "Operational",
-              "description": "The lack of material changes to risk factors since the last filing suggests ongoing operational risks that may not have been addressed.",
-              "severity": "Medium",
-              "mitigation_mentioned": "No"
-            }
-          ],
-          "summary": "The risks identified in the document highlight significant financial and operational vulnerabilities, particularly in relation to regulatory compliance and the potential impact on the company's overall performance.",
-          "key_concerns": [
-            "Potential adverse effects on financial condition and stock price due to risk materialization.",
-            "Regulatory compliance risks stemming from unregistered sales of equity securities."
-          ]
-        },
-        "strategy": {
-          "strategic_objectives": [
-            "Align fiscal quarters with calendar quarters",
-            "Increase revenue across product lines",
-            "Enhance service offerings to drive growth"
-          ],
-          "key_initiatives": [
-            {
-              "initiative": "Realignment of Fiscal Quarters",
-              "description": "Realigning fiscal quarters with calendar quarters to improve financial reporting and operational efficiency.",
-              "status": "Completed"
-            },
-            {
-              "initiative": "Expansion of Services",
-              "description": "Increasing focus on service offerings to drive higher revenue and customer engagement.",
-              "status": "Ongoing"
-            }
-          ],
-          "competitive_positioning": "Strong market presence in consumer electronics with a focus on premium products and services.",
-          "growth_strategy": "Diversifying revenue streams through increased service offerings and maintaining leadership in key product categories like iPhone and Mac.",
-          "summary": "The company is strategically focused on aligning its fiscal structure with market expectations while driving growth through enhanced services and maintaining its competitive edge in core product categories."
-        },
-        "timeline": {
-          "timeline_events": [
-            {
-              "date": "2023-01-01",
-              "event": "Realignment of the Company\u2019s fiscal quarters with calendar quarters",
-              "category": "Business",
-              "significance": "High"
-            },
-            {
-              "date": "2024-06-29",
-              "event": "End of the three-month period for fiscal year 2024",
-              "category": "Financial",
-              "significance": "Medium"
-            },
-            {
-              "date": "2024-06-29",
-              "event": "End of the nine-month period for fiscal year 2024",
-              "category": "Financial",
-              "significance": "Medium"
-            },
-            {
-              "date": "2023-07-01",
-              "event": "End of the three-month period for fiscal year 2023",
-              "category": "Financial",
-              "significance": "Medium"
-            },
-            {
-              "date": "2023-07-01",
-              "event": "End of the nine-month period for fiscal year 2023",
-              "category": "Financial",
-              "significance": "Medium"
-            }
-          ],
-          "reporting_periods": [
-            "Three Months Ended June 29, 2024",
-            "Nine Months Ended June 29, 2024",
-            "Three Months Ended July 1, 2023",
-            "Nine Months Ended July 1, 2023"
-          ],
-          "chronological_narrative": "In the first fiscal quarter of 2023, the Company realigned its fiscal quarters with calendar quarters. The fiscal year 2023 spanned 53 weeks, while fiscal year 2024 spans 52 weeks. The three-month and nine-month periods ended on June 29, 2024, and July 1, 2023, marking significant reporting periods for the Company."
-        }
-      },
-      "cost": {
-        "total_usd": 0.002,
-        "input_tokens": 8213,
-        "output_tokens": 1211,
-        "agents_used": [
-          {
-            "agent": "CacheAgent",
-            "tokens": 0,
-            "cost_usd": 0.0
-          },
-          {
-            "agent": "FinancialAgent",
-            "tokens": 2136,
-            "cost_usd": 0.0004
-          },
-          {
-            "agent": "RiskAgent",
-            "tokens": 1731,
-            "cost_usd": 0.0004
-          },
-          {
-            "agent": "StrategyAgent",
-            "tokens": 2001,
-            "cost_usd": 0.0004
-          },
-          {
-            "agent": "TimelineAgent",
-            "tokens": 2202,
-            "cost_usd": 0.0005
-          },
-          {
-            "agent": "SynthesisAgent",
-            "tokens": 1354,
-            "cost_usd": 0.0002
-          },
-          {
-            "agent": "CacheAgent",
-            "tokens": 175,
-            "cost_usd": 0.0
-          },
-          {
-            "agent": "FinancialAgent",
-            "tokens": 2154,
-            "cost_usd": 0.0004
-          },
-          {
-            "agent": "RiskAgent",
-            "tokens": 1500,
-            "cost_usd": 0.0004
-          },
-          {
-            "agent": "StrategyAgent",
-            "tokens": 1995,
-            "cost_usd": 0.0004
-          },
-          {
-            "agent": "TimelineAgent",
-            "tokens": 2179,
-            "cost_usd": 0.0005
-          },
-          {
-            "agent": "SynthesisAgent",
-            "tokens": 1327,
-            "cost_usd": 0.0002
-          }
-        ]
-      }
-    },
-    "timestamp": "2025-12-20T15:48:34.217004",
-    "access_count": 1
-  },
-  {
-    "question": "What was the revenue in quarter 1 in 2023?",
-    "answer": "The revenue in quarter 1 of 2023 was 90,953 million.",
-    "metadata": {
-      "sources": [
-        "_10-Q-Q2-2024-As-Filed.pdf"
-      ],
-      "analysis": {
-        "financials": {
-          "metrics": {
-            "revenue": "90,953 million",
-            "net_income": "Not provided",
-            "eps": "Not provided",
-            "assets": "Not provided",
-            "liabilities": "Not provided",
-            "equity": "Not provided"
-          },
-          "trends": {
-            "revenue_trend": "decreasing",
-            "profitability_trend": "Not provided",
-            "key_changes": [
-              "iPhone sales decreased from $51,334 million to $45,963 million in Q2",
-              "iPad sales decreased from $6,670 million to $5,559 million in Q2",
-              "Wearables, Home and Accessories decreased from $8,757 million to $7,913 million in Q2",
-              "Services increased from $20,907 million to $23,867 million in Q2"
-            ]
-          },
-          "ratios": {
-            "debt_to_equity": "Not provided",
-            "current_ratio": "Not provided",
-            "other_ratios": []
-          },
-          "summary": "The company experienced a decline in revenue for key product categories such as iPhone, iPad, and Wearables, while Services showed growth. Overall, the revenue trend is decreasing compared to the previous year."
-        },
-        "risks": {
-          "risk_factors": [
-            {
-              "category": "Legal/Regulatory",
-              "description": "Potential adverse outcomes from legal matters that could exceed management's expectations, impacting financial condition and operating results.",
-              "severity": "High",
-              "mitigation_mentioned": "No"
-            },
-            {
-              "category": "Financial",
-              "description": "The company's financial condition and stock price may be adversely affected by various known and unknown factors.",
-              "severity": "High",
-              "mitigation_mentioned": "No"
-            },
-            {
-              "category": "Operational",
-              "description": "The company's operations and reputation can be negatively impacted by the materialization of various risks.",
-              "severity": "Medium",
-              "mitigation_mentioned": "No"
-            },
-            {
-              "category": "Strategic",
-              "description": "The overall business strategy may be compromised due to the occurrence of various risk factors.",
-              "severity": "Medium",
-              "mitigation_mentioned": "No"
-            }
-          ],
-          "summary": "The company faces significant risks related to legal matters, financial stability, operational integrity, and strategic direction, with no current mitigation strategies mentioned.",
-          "key_concerns": [
-            "Legal outcomes exceeding expectations could severely impact financial results.",
-            "The company's reputation and stock price are vulnerable to various risks."
-          ]
-        },
-        "strategy": {
-          "strategic_objectives": [
-            "Realign fiscal quarters with calendar quarters",
-            "Increase revenue across product lines"
-          ],
-          "key_initiatives": [
-            {
-              "initiative": "Fiscal Realignment",
-              "description": "Adjusting the fiscal calendar to align with the calendar year, impacting financial reporting and planning.",
-              "status": "Completed"
-            },
-            {
-              "initiative": "Revenue Growth in Services",
-              "description": "Focus on increasing revenue from services, which showed significant growth compared to previous periods.",
-              "status": "Ongoing"
-            }
-          ],
-          "competitive_positioning": "Strong positioning in the premium consumer electronics market with a diverse product portfolio including iPhones, Macs, iPads, and services.",
-          "growth_strategy": "Focus on expanding service offerings and maintaining strong sales in core product categories while managing product lifecycle effectively.",
-          "summary": "The company is strategically focused on aligning its fiscal operations with market expectations while driving growth through its services and core product lines."
-        },
-        "timeline": {
-          "timeline_events": [
-            {
-              "date": "2023-01-01",
-              "event": "Realignment of the Company\u2019s fiscal quarters with calendar quarters",
-              "category": "Business",
-              "significance": "High"
-            },
-            {
-              "date": "2024-03-30",
-              "event": "End of the three-month period for fiscal year 2024",
-              "category": "Financial",
-              "significance": "Medium"
-            },
-            {
-              "date": "2024-03-30",
-              "event": "End of the six-month period for fiscal year 2024",
-              "category": "Financial",
-              "significance": "Medium"
-            },
-            {
-              "date": "2023-04-01",
-              "event": "End of the three-month period for fiscal year 2023",
-              "category": "Financial",
-              "significance": "Medium"
-            },
-            {
-              "date": "2023-04-01",
-              "event": "End of the six-month period for fiscal year 2023",
-              "category": "Financial",
-              "significance": "Medium"
-            }
-          ],
-          "reporting_periods": [
-            "Fiscal Year 2024: March 30, 2024",
-            "Fiscal Year 2023: April 1, 2023"
-          ],
-          "chronological_narrative": "In the first fiscal quarter of 2023, the Company realigned its fiscal quarters with calendar quarters. The fiscal year 2024 ended on March 30, 2024, marking the end of both the three-month and six-month reporting periods. The previous fiscal year 2023 ended on April 1, 2023, also concluding its three-month and six-month reporting periods."
-        }
-      },
-      "cost": {
-        "total_usd": 0.0039,
-        "input_tokens": 16367,
-        "output_tokens": 2387,
-        "agents_used": [
-          {
-            "agent": "CacheAgent",
-            "tokens": 0,
-            "cost_usd": 0.0
-          },
-          {
-            "agent": "FinancialAgent",
-            "tokens": 2136,
-            "cost_usd": 0.0004
-          },
-          {
-            "agent": "RiskAgent",
-            "tokens": 1731,
-            "cost_usd": 0.0004
-          },
-          {
-            "agent": "StrategyAgent",
-            "tokens": 2001,
-            "cost_usd": 0.0004
-          },
-          {
-            "agent": "TimelineAgent",
-            "tokens": 2202,
-            "cost_usd": 0.0005
-          },
-          {
-            "agent": "SynthesisAgent",
-            "tokens": 1354,
-            "cost_usd": 0.0002
-          },
-          {
-            "agent": "CacheAgent",
-            "tokens": 175,
-            "cost_usd": 0.0
-          },
-          {
-            "agent": "FinancialAgent",
-            "tokens": 2154,
-            "cost_usd": 0.0004
-          },
-          {
-            "agent": "RiskAgent",
-            "tokens": 1500,
-            "cost_usd": 0.0004
-          },
-          {
-            "agent": "StrategyAgent",
-            "tokens": 1995,
-            "cost_usd": 0.0004
-          },
-          {
-            "agent": "TimelineAgent",
-            "tokens": 2179,
-            "cost_usd": 0.0005
-          },
-          {
-            "agent": "SynthesisAgent",
-            "tokens": 1327,
-            "cost_usd": 0.0002
-          }
-        ]
-      }
-    },
-    "timestamp": "2025-12-20T15:50:24.502585",
-    "access_count": 0
-  },
-  {
-    "question": "What was the revenue for each quarter in 2023?",
-    "answer": "The revenue for each quarter in 2023 is not explicitly provided in the available data. However, the total revenue for the nine-month period ending July 1, 2023, is reported as 154,961. The quarterly breakdown is not detailed, but the total revenue for the first three months of 2023 can be inferred as follows: \n\n- Q1: 39,296\n- Q2: 7,009\n- Q3: 7,162\n- Q4: 8,097 \n\nThe total revenue for these three months sums to 61,564, leaving a remainder of 93,397 for the subsequent periods. \n\nFor a precise quarterly breakdown, further specific data would be required.",
-    "metadata": {
-      "sources": [
-        "_10-Q-Q3-2024-As-Filed.pdf"
+      "agents_used": [
+        "financial",
+        "timeline"
       ],
       "analysis": {
         "financials": {
@@ -407,66 +17,6 @@
           "ratios": {},
           "summary": "{\n    \"metrics\": {\n        \"revenue\": {\n            \"three_months\": 39_296 + 7_009 + 7_162 + 8_097 + 24_213,\n            \"nine_months\": 154_961 + 22_240 + 19_744 + 27_963 + 71_197\n        },\n        \"net_income\": \"Not provided in the excerpt\",\n        \"eps\": \"Not provided in the excerpt\",\n        \"assets\": \"Not provided in the excerpt\",\n        \"liabilities\": \"Not provided in the excerpt\",\n        \"equity\": \"Not provided in the excerpt\"\n    },\n    \"trends\": {\n        \"revenue_trend\": \"decreasing"
         },
-        "risks": {
-          "risk_factors": [
-            {
-              "category": "Financial",
-              "description": "The company's business, reputation, results of operations, financial condition, and stock price can be materially and adversely affected by various known or unknown risks.",
-              "severity": "High",
-              "mitigation_mentioned": "No"
-            },
-            {
-              "category": "Operational",
-              "description": "Potential operational risks that may arise from the company's activities, as indicated by the reference to risk factors in previous filings.",
-              "severity": "Medium",
-              "mitigation_mentioned": "No"
-            },
-            {
-              "category": "Regulatory/Compliance",
-              "description": "The company must comply with various regulations, and any changes or failures in compliance could adversely affect its operations.",
-              "severity": "High",
-              "mitigation_mentioned": "No"
-            },
-            {
-              "category": "Strategic",
-              "description": "Strategic risks related to market positioning and competition that could impact the company's long-term objectives.",
-              "severity": "Medium",
-              "mitigation_mentioned": "No"
-            },
-            {
-              "category": "Market/Competitive",
-              "description": "Market risks associated with competition and changes in market conditions that could adversely affect the company's financial performance.",
-              "severity": "High",
-              "mitigation_mentioned": "No"
-            }
-          ],
-          "summary": "The overall risk assessment indicates a high level of financial and regulatory risks, with operational, strategic, and market risks also present. The company needs to address these risks to maintain its financial health and market position.",
-          "key_concerns": [
-            "Material adverse effects on business and financial condition due to unknown risks.",
-            "Compliance with regulatory requirements is critical to avoid operational disruptions."
-          ]
-        },
-        "strategy": {
-          "strategic_objectives": [
-            "Realign fiscal quarters with calendar quarters",
-            "Increase revenue across all product categories"
-          ],
-          "key_initiatives": [
-            {
-              "initiative": "Fiscal Quarter Realignment",
-              "description": "Adjusting the fiscal quarters to align with the calendar quarters to improve financial reporting and analysis.",
-              "status": "Completed"
-            },
-            {
-              "initiative": "Product Revenue Growth",
-              "description": "Focus on increasing sales in key product categories including iPhone, Mac, iPad, Wearables, and Services.",
-              "status": "Ongoing"
-            }
-          ],
-          "competitive_positioning": "The company maintains a strong position in the consumer electronics market, particularly with flagship products like the iPhone and a growing services segment.",
-          "growth_strategy": "Diversifying product offerings and enhancing services to drive revenue growth.",
-          "summary": "The company is strategically focused on aligning its fiscal reporting with calendar periods while actively pursuing revenue growth across its diverse product lines."
-        },
         "timeline": {
           "timeline_events": [
             {
@@ -476,14 +26,8 @@
               "significance": "High"
             },
             {
-              "date": "2023-07-01",
-              "event": "End of the nine-month period for fiscal year 2023",
-              "category": "Financial",
-              "significance": "Medium"
-            },
-            {
               "date": "2024-06-29",
-              "event": "End of the three-month period for fiscal year 2024",
+              "event": "End of the three-month period for Q3 2024",
               "category": "Financial",
               "significance": "Medium"
             },
@@ -492,61 +36,194 @@
               "event": "End of the nine-month period for fiscal year 2024",
               "category": "Financial",
               "significance": "Medium"
+            },
+            {
+              "date": "2023-07-01",
+              "event": "End of the three-month period for Q3 2023",
+              "category": "Financial",
+              "significance": "Medium"
+            },
+            {
+              "date": "2023-07-01",
+              "event": "End of the nine-month period for fiscal year 2023",
+              "category": "Financial",
+              "significance": "Medium"
             }
           ],
           "reporting_periods": [
-            "Three Months Ended June 29, 2024",
+            "Q3 2024 (Three Months Ended June 29, 2024)",
+            "Q3 2023 (Three Months Ended July 1, 2023)",
             "Nine Months Ended June 29, 2024",
-            "Three Months Ended July 1, 2023",
             "Nine Months Ended July 1, 2023"
           ],
-          "chronological_narrative": "In the first fiscal quarter of 2023, the Company realigned its fiscal quarters with calendar quarters. The fiscal year 2023 ended on July 1, 2023, marking the end of the nine-month period. The fiscal year 2024, which spans 52 weeks, will conclude with the three-month and nine-month periods ending on June 29, 2024."
+          "chronological_narrative": "In the first fiscal quarter of 2023, the Company realigned its fiscal quarters with calendar quarters. The fiscal year 2023 spanned 53 weeks, while fiscal year 2024 spans 52 weeks. The three-month and nine-month periods ended on June 29, 2024, and July 1, 2023, respectively, marking significant reporting periods for the Company."
         }
       },
       "cost": {
-        "total_usd": 0.0022,
-        "input_tokens": 8606,
-        "output_tokens": 1445,
+        "total_usd": 0.0013,
+        "input_tokens": 4879,
+        "output_tokens": 874,
         "agents_used": [
           {
             "agent": "CacheAgent",
-            "tokens": 189,
+            "tokens": 0,
             "cost_usd": 0.0
           },
           {
-            "agent": "CacheAgent",
-            "tokens": 189,
-            "cost_usd": 0.0
+            "agent": "TriageAgent",
+            "tokens": 453,
+            "cost_usd": 0.0001
           },
           {
             "agent": "FinancialAgent",
-            "tokens": 2223,
+            "tokens": 2219,
             "cost_usd": 0.0005
           },
           {
-            "agent": "RiskAgent",
-            "tokens": 1855,
-            "cost_usd": 0.0004
-          },
-          {
-            "agent": "StrategyAgent",
-            "tokens": 1997,
-            "cost_usd": 0.0004
-          },
-          {
             "agent": "TimelineAgent",
-            "tokens": 2154,
+            "tokens": 2216,
             "cost_usd": 0.0005
           },
           {
             "agent": "SynthesisAgent",
-            "tokens": 1444,
-            "cost_usd": 0.0003
+            "tokens": 865,
+            "cost_usd": 0.0002
+          },
+          {
+            "agent": "CacheAgent",
+            "tokens": 174,
+            "cost_usd": 0.0
+          },
+          {
+            "agent": "CacheAgent",
+            "tokens": 181,
+            "cost_usd": 0.0
+          },
+          {
+            "agent": "TriageAgent",
+            "tokens": 457,
+            "cost_usd": 0.0001
+          },
+          {
+            "agent": "TimelineAgent",
+            "tokens": 1873,
+            "cost_usd": 0.0004
+          },
+          {
+            "agent": "SynthesisAgent",
+            "tokens": 601,
+            "cost_usd": 0.0001
           }
         ]
       }
     },
-    "timestamp": "2025-12-20T16:04:23.694434",
+    "timestamp": "2025-12-20T16:24:14.176594",
+    "access_count": 1
+  },
+  {
+    "question": "how did R&D expends change from 2022 to 2024 quarter by quarter?",
+    "answer": "The available analysis data does not provide specific numerical values or metrics regarding the changes in R&D expenditures from 2022 to 2024 on a quarter-by-quarter basis. However, it indicates that there was a significant increase in research and development expenses in 2024 compared to 2023, driven by higher headcount-related and infrastructure costs. The specific quarter-by-quarter breakdown is not detailed in the provided data. For precise figures, further financial reports or data would be required.",
+    "metadata": {
+      "sources": [
+        "10Q-Q2-2025-as-filed.pdf"
+      ],
+      "agents_used": [
+        "timeline"
+      ],
+      "analysis": {
+        "timeline": {
+          "timeline_events": [
+            {
+              "date": "2025-03-30",
+              "event": "Second quarter financial results reported, showing growth in research and development and selling, general and administrative expenses compared to the same period in 2024.",
+              "category": "Financial",
+              "significance": "High"
+            },
+            {
+              "date": "2024-03-30",
+              "event": "Comparison period for second quarter financial results, reflecting previous year's expenses.",
+              "category": "Financial",
+              "significance": "Medium"
+            },
+            {
+              "date": "2025",
+              "event": "Overall increase in research and development expenses driven by headcount-related and infrastructure-related costs.",
+              "category": "Business",
+              "significance": "High"
+            },
+            {
+              "date": "2025",
+              "event": "Increase in selling, general and administrative expenses attributed to professional services and headcount-related expenses.",
+              "category": "Business",
+              "significance": "High"
+            }
+          ],
+          "reporting_periods": [
+            "Q2 2025",
+            "Q2 2024"
+          ],
+          "chronological_narrative": "On March 30, 2025, the company reported its second quarter financial results, highlighting significant growth in both research and development expenses and selling, general and administrative expenses compared to the same period in 2024. The increase in research and development expenses was primarily due to higher headcount-related and infrastructure costs, while the rise in selling, general and administrative expenses was driven by increased professional services and headcount-related expenses."
+        }
+      },
+      "cost": {
+        "total_usd": 0.002,
+        "input_tokens": 7712,
+        "output_tokens": 1327,
+        "agents_used": [
+          {
+            "agent": "CacheAgent",
+            "tokens": 0,
+            "cost_usd": 0.0
+          },
+          {
+            "agent": "TriageAgent",
+            "tokens": 453,
+            "cost_usd": 0.0001
+          },
+          {
+            "agent": "FinancialAgent",
+            "tokens": 2219,
+            "cost_usd": 0.0005
+          },
+          {
+            "agent": "TimelineAgent",
+            "tokens": 2216,
+            "cost_usd": 0.0005
+          },
+          {
+            "agent": "SynthesisAgent",
+            "tokens": 865,
+            "cost_usd": 0.0002
+          },
+          {
+            "agent": "CacheAgent",
+            "tokens": 174,
+            "cost_usd": 0.0
+          },
+          {
+            "agent": "CacheAgent",
+            "tokens": 181,
+            "cost_usd": 0.0
+          },
+          {
+            "agent": "TriageAgent",
+            "tokens": 457,
+            "cost_usd": 0.0001
+          },
+          {
+            "agent": "TimelineAgent",
+            "tokens": 1873,
+            "cost_usd": 0.0004
+          },
+          {
+            "agent": "SynthesisAgent",
+            "tokens": 601,
+            "cost_usd": 0.0001
+          }
+        ]
+      }
+    },
+    "timestamp": "2025-12-20T16:26:27.939669",
     "access_count": 0
   }
 ]

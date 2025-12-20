@@ -2,7 +2,7 @@ import json
 import requests
 import streamlit as st
 
-BACKEND_URL = "http://127.0.0.1:8080"
+BACKEND_URL = "http://127.0.0.1:8000"
 
 st.set_page_config(page_title="SEC Filings Multi-Agent Chat (Demo)", layout="wide")
 st.title("📄 SEC Filings Multi-Agent Chat (Demo)")
@@ -67,7 +67,6 @@ if question:
         with col2:
             st.subheader("Diagnostics")
             meta = {
-                "routing": result.get("routing", {}),
                 "cost": result.get("cost", {}),
                 "latency_seconds": result.get("latency_seconds", None),
             }
@@ -78,7 +77,6 @@ if question:
         "content": result.get("answer", ""),
         "meta": {
             "sources": result.get("sources", []),
-            "routing": result.get("routing", {}),
             "cost": result.get("cost", {}),
             "latency_seconds": result.get("latency_seconds", None),
         }

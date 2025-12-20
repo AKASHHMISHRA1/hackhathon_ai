@@ -20,10 +20,10 @@ orchestrator = Orchestrator(vector_store=vector_store)
 # Load PDF files from data folder and populate vector DB
 print("Loading PDF files and populating vector database...")
 documents = {}
-for file in os.listdir("data"):
+for file in os.listdir("/Users/akash.mishra/MyProject/ai-agent/financial-intelligence-agent/data"):
     if file.endswith(".pdf"):
         print(f"Loading {file}...")
-        documents[file] = load_pdf(f"data/{file}")
+        documents[file] = load_pdf(f"/Users/akash.mishra/MyProject/ai-agent/financial-intelligence-agent/data/{file}")
 
 # Add documents to vector store
 if documents:
@@ -34,8 +34,10 @@ if documents:
 else:
     print("Warning: No PDF files found in data folder")
 
+
+# orchestrator.run(question = "What was the revenue in Q1 2023?")
+
 @app.get("/ask")
-# @app.post("/ask")
 def ask(q: str):
     return orchestrator.run(q)
 

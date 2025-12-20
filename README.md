@@ -101,16 +101,66 @@ OPENAI_API_KEY=your_api_key_here
 
 ### Running the Application
 
-#### Option 1: FastAPI Server
+#### Step 1: Start the Backend (FastAPI Server)
 
-Start the FastAPI server:
+Open a terminal and navigate to the project directory:
+
 ```bash
-python app.py
+cd ai-agent/financial-intelligence-agent
 ```
 
-Or using uvicorn directly:
+Start the FastAPI backend server:
+
 ```bash
-uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+uvicorn app:app --reload --port 8000
+```
+
+The backend will:
+- Load PDF files from the `data/` folder
+- Initialize and populate the ChromaDB vector database
+- Start the FastAPI server on `http://127.0.0.1:8000`
+
+You should see output like:
+```
+{
+    "answer": "The revenue in Q1 2023 was $100,953 million.",
+    "sources": [
+        "_10-Q-Q2-2024-As-Filed.pdf"
+    ],
+    "cost": {
+        "total_usd": 0.0024,
+        "input_tokens": 9828,
+        "output_tokens": 1560,
+        "agents_used": [
+            {
+                "agent": "CacheAgent",
+                "tokens": 0,
+                "cost_usd": 0.0
+            },
+            {
+                "agent": "TriageAgent",
+                "tokens": 457,
+                "cost_usd": 0.0001
+            },
+            {
+                "agent": "FinancialAgent",
+                "tokens": 1872,
+                "cost_usd": 0.0004
+            },
+            {
+                "agent": "TimelineAgent",
+                "tokens": 1862,
+                "cost_usd": 0.0005
+            },
+            {
+                "agent": "SynthesisAgent",
+                "tokens": 978,
+                "cost_usd": 0.0002
+            }
+        ]
+    },
+    "latency_seconds": 1.41
+}
 ```
 
 The API will be available at `http://localhost:8000`
